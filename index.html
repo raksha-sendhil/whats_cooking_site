@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>What's Cooking</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="sheet">
+  <header class="masthead">
+    <div class="dateline">
+      <span id="edition-line">What's Cooking</span>
+      <button type="button" class="linkish" id="theme-toggle">Night edition</button>
+    </div>
+    <h1 class="title"><a href="#/today">What's Cooking</a></h1>
+    <p class="motto">The day's technology, read for you. What changed, what it means, and what's still unsolved.</p>
+    <nav class="sections" id="nav" aria-label="Sections">
+      <a href="#/today" data-route="today">Today</a>
+      <a href="#/problems" data-route="problems">Problems</a>
+      <a href="#/longgame" data-route="longgame">The long game</a>
+      <a href="#/wire" data-route="wire">The wire</a>
+      <a href="#/archive" data-route="archive">Back issues</a>
+      <a href="#/saved" data-route="saved">Saved</a>
+    </nav>
+  </header>
+
+  <main id="page" tabindex="-1">
+    <p class="loading">Opening today's paper…</p>
+  </main>
+
+  <footer class="colophon" id="colophon"></footer>
+</div>
+
+<template id="unlock-template">
+  <section class="unlock" aria-labelledby="unlock-title">
+    <h2 id="unlock-title">This paper is sealed.</h2>
+    <p>Every edition is encrypted before it leaves GitHub. Enter your passphrase to open it on this device.</p>
+    <form id="unlock-form" autocomplete="off">
+      <label for="passphrase">Passphrase</label>
+      <input id="passphrase" name="passphrase" type="password" required autocomplete="current-password">
+      <label class="check" for="remember"><input id="remember" type="checkbox" checked> Remember on this device</label>
+      <button type="submit" id="unlock-button">Open the paper</button>
+      <p class="unlock-error" id="unlock-error" role="alert"></p>
+    </form>
+    <p class="fineprint">Decryption happens in your browser. The passphrase is never sent anywhere.</p>
+  </section>
+</template>
+
+<script src="app.js"></script>
+</body>
+</html>
